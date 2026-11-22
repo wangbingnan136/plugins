@@ -264,7 +264,8 @@ agy 自己的系统提示词，只剩插件的一行工具说明和客户端的�
 - **回复里出现 "Agent execution terminated due to error."**：这是 agy 的错误标记。插件会
   从 agy 的日志中取出真实原因，并以错误结束本轮，不会当作正常回复输出。agy 1.5.8 的
   "There was a network issue connecting to the server" 和 "Your AI credits balance is
-  too low to continue." 也一样（后者按额度不足报错）；`⚠ API error (attempt N)` 这类
+  too low to continue." 也一样（后者按额度不足报错），单独一行收尾的 "⚠ agent executor error: …" 同样按
+  错误结束本轮；`⚠ API error (attempt N)` 这类
   重试中的提示行、上游流断开后重试前写的 "⚠ The stream was interrupted. Please continue the
   task you were working on." 都会被去掉。agy 自己撞上输出上限后重试时，也会把三行提示写进正文
   （"Your previous response was cut off because it exceeded the output token limit"、
